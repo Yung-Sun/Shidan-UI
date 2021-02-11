@@ -1,5 +1,3 @@
 <template>
-    <h1>
-        hi
-    </h1>
+    <div>xxx1</div>
 </template>
