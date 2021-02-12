@@ -1,21 +1,23 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
+import './index.scss'
 import {createWebHashHistory, createRouter} from 'vue-router'
-import xxx from './components/xxx.vue'
-import xxx2 from './components/xxx2.vue'
+import Home from './Views/Home.vue'
+import Doc from './Views/Doc.vue'
+
 
 
 const history = createWebHashHistory()
 const router = createRouter({
     history: history,
     routes: [
-        {path:'/',component: xxx},
-        {path:'/xxx',component: xxx2}
+        {path:'/', component: Home},
+        {path:'/doc', component: Doc}
     ]
 })
 
 const app = createApp(App)
+
 app.use(router)
 app.mount('#app')
 
