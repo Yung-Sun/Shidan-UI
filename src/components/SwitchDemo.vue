@@ -1,33 +1,10 @@
 <template>
-  <div>switch的文档</div>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
-  <p>switch的文档</p>
+  <Switch />
 </template>
+
+<script lang="ts">
+import Switch from "../lib/Switch.vue";
+export default {
+  components: { Switch },
+};
+</script>
