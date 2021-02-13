@@ -48,40 +48,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.asideButton {
-  position: relative;
-  z-index: 10;
-  top: -65px;
-  left: 65px;
-  line-height: 100%;
-}
-
-aside {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: lightblue;
-  padding: 20px;
-  padding-top: 86px;
-
-  h2 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: default;
-  }
-  ol {
-    color: #333;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    > li {
-      margin-bottom: 5px;
-      > a {
-        text-decoration: none;
-        color: inherit;
+.content {
+  display: flex;
+  justify-content: space-between;
+  aside {
+    background: lightblue;
+    padding: 20px;
+    width: 140px;
+    h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: default;
+    }
+    ol {
+      color: #333;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      > li {
+        margin-bottom: 5px;
+        > a {
+          text-decoration: none;
+          color: inherit;
+        }
       }
     }
+    @media (max-width: 500px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 86px;
+    }
+  }
+  main {
+    flex-grow: 1;
+    padding: 10px 20px;
   }
 }
 </style>
