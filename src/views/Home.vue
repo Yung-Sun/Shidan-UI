@@ -30,7 +30,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 25%;
+  padding-top: 140px;
   > h1 {
     font-weight: normal;
     font-size: 48px;

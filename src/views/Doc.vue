@@ -50,42 +50,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+> .nav {
+  flex-shrink: 0;
+}
+> .content {
+  flex-grow: 1;
+  padding-top: 60px;
+  padding-left: 156px;
+  @media (max-width: 500px) {
+    padding-left: 0;
+  }
+}
+
 .content {
   display: flex;
-  justify-content: space-between;
-  aside {
-    background: lightblue;
-    padding: 20px;
-    width: 140px;
-    h2 {
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: default;
-    }
-    ol {
-      color: #333;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      > li {
-        margin-bottom: 5px;
-        > a {
-          text-decoration: none;
-          color: inherit;
-        }
-      }
-    }
-    @media (max-width: 500px) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 86px;
-    }
+  > aside {
+    flex-shrink: 0;
   }
-  main {
+  > main {
     flex-grow: 1;
-    padding: 10px 20px;
+    padding-left: 160px;
+    padding-top: 32px;
+    // background: lightgreen;
+    @media (max-width: 500px) {
+      padding-left: 16px;
+      padding-top: 80px;
+    }
   }
+}
+aside {
+  color: #f5a623;
+  background: #333;
+  width: 150px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
+  height: 100%;
+  > h2 {
+    margin-bottom: 4px;
+  }
+  > ol {
+    list-style: none;
+    > li {
+      padding: 4px 0;
+    }
+  }
+}
+main {
+  overflow: auto;
 }
 </style>

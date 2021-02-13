@@ -39,7 +39,8 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   padding: 20px 10px;
-  position: relative;
+  position: fixed;
+  background-color: transparent;
   z-index: 10;
 
   .asideButton {
@@ -52,8 +53,11 @@ export default {
 
 @media (max-width: 500px) {
   .topnav {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
+    background-color: white;
+    width: 100%;
     .asideButton {
       position: relative;
       display: inline;
