@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <Topnav />
-    <div class="banner">
-      <egg
-        theme="multi-color"
-        size="200"
-        :fill="['#333', '#F5A623', '#FFF', '#43CCF8']"
-        :strokeWidth="2"
-      />
-      <h1>示 蛋 UI</h1>
-      <h2>一 个 简 洁 美 观 的 UI 框 架</h2>
-      <div class="action">
-        <a href="https://github.com/Yung-Sun"> GitHub </a>
-        <a href="#/doc"> Start </a>
-      </div>
+  <div class="banner">
+    <egg
+      theme="multi-color"
+      size="200"
+      :fill="['#333', '#F5A623', '#FFF', '#43CCF8']"
+      :strokeWidth="2"
+    />
+    <h1>示 蛋 UI</h1>
+    <h2>一 个 简 洁 美 观 的 UI 框 架</h2>
+    <div class="action">
+      <a href="https://github.com/Yung-Sun"> GitHub </a>
+      <a href="#/doc"> Start </a>
     </div>
   </div>
 </template>
@@ -33,7 +30,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 25%;
   > h1 {
     font-weight: normal;
     font-size: 48px;
