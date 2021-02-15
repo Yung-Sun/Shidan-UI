@@ -57,13 +57,13 @@ export default {
   flex-grow: 1;
   padding-top: 60px;
   padding-left: 156px;
+  display: flex;
   @media (max-width: 500px) {
     padding-left: 0;
   }
 }
 
 .content {
-  display: flex;
   > aside {
     flex-shrink: 0;
   }

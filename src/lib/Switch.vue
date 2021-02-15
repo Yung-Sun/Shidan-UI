@@ -29,6 +29,7 @@ button {
   background: rgba($color: #333333, $alpha: 0.5);
   border-radius: $h/2;
   position: relative;
+  left: 40%;
   > span {
     position: absolute;
     top: 2px;
