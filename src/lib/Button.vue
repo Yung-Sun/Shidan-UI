@@ -1,11 +1,18 @@
 <template>
-  <button>
+  <button :class="`theme-${theme}`">
     <slot />
   </button>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    theme: {
+      type: String,
+      default: "button",
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

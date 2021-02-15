@@ -1,7 +1,10 @@
 <template>
-  <Button @click="Onclick" @focus="Onclick" @mouseover="Onclick">
-    哈哈哈
-  </Button>
+  <h1>Button 组件</h1>
+  <hr />
+  <Button>我是按钮</Button>
+  <Button theme="button"> 我是按钮 </Button>
+  <Button theme="link"> 我是按钮 </Button>
+  <Button theme="text"> 我是按钮 </Button>
 </template>
 
 <script lang="ts">
