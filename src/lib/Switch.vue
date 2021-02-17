@@ -1,11 +1,14 @@
 <template>
-  <button @click="toggle" :class="{ checked: value }">
+  <button
+    @click="toggle"
+    :class="{ 'shidan-checked': value }"
+    class="shidan-switch"
+  >
     <span></span>
   </button>
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
 export default {
   props: {
     value: Boolean,
@@ -19,17 +22,18 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.shidan-switch {
   height: $h;
   width: $h * 2;
   border: none;
   background: rgba($color: #333333, $alpha: 0.5);
   border-radius: $h/2;
   position: relative;
-  left: 40%;
+  display: block;
+  margin-top: 20px;
   > span {
     position: absolute;
     top: 2px;
@@ -43,7 +47,7 @@ button {
   &:focus {
     outline: none;
   }
-  &.checked {
+  &.shidan-checked {
     background: #f5a623;
     > span {
       left: calc(100% - #{$h2} - 3px);
@@ -54,7 +58,7 @@ button {
       width: $h2 + 3px;
     }
   }
-  &.checked:active {
+  &.shidan-checked:active {
     > span {
       width: $h2 + 3px;
       margin-left: -4px;

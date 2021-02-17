@@ -66,15 +66,14 @@ export default {
 .content {
   > aside {
     flex-shrink: 0;
+    z-index: 9;
   }
   > main {
     flex-grow: 1;
-    padding-left: 160px;
-    padding-top: 32px;
-    // background: lightgreen;
+    padding-left: 200px;
+    margin-right: 16px;
     @media (max-width: 500px) {
-      padding-left: 16px;
-      padding-top: 80px;
+      padding: 0 16px;
     }
   }
 }
@@ -93,8 +92,14 @@ aside {
   }
   > ol {
     list-style: none;
+    padding: 0;
+
     > li {
-      padding: 4px 0;
+      padding: 6px 0;
+      > a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
 }

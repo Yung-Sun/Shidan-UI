@@ -1,22 +1,20 @@
 <template>
   <div class="topnav">
-    <div class="asideButton" @click="toggleAside">
-      <drop-down-list
-        theme="multi-color"
-        size="40"
-        :fill="['#333', '#F5A623', '#FFF', '#ffffff']"
-        :strokeWidth="3"
-      />
-    </div>
-    <router-link to="/" title="返回首页~">
+    <router-link to="/" title="返回首页~" class="logo">
       <painted-eggshell
         theme="multi-color"
         size="40"
         :fill="['#333', '#F5A623', '#FFF', '#43CCF8']"
-        class="logo"
       />
     </router-link>
-    <span class="rightBlock"></span>
+    <div class="asideButton" @click="toggleAside">
+      <drop-down-list
+        theme="multi-color"
+        size="40"
+        :fill="['#66666680', '#F5A623', '#FFF', '#ffffff']"
+        :strokeWidth="3"
+      />
+    </div>
   </div>
 </template>
 
@@ -39,31 +37,31 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   padding: 20px 10px;
+  width: 100%;
   position: fixed;
   background-color: transparent;
-  z-index: 10;
-
+  display: block;
+  z-index: 11;
   .asideButton {
+    position: absolute;
     display: none;
-  }
-  .rightBlock {
-    display: none;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    z-index: 11;
   }
 }
 
 @media (max-width: 500px) {
   .topnav {
-    padding: 10px;
+    position: inherit;
     display: flex;
-    justify-content: space-between;
-    background-color: white;
-    width: 100%;
+    justify-content: center;
+    .logo {
+      margin: 0 auto;
+    }
     .asideButton {
-      position: relative;
-      display: inline;
-      top: 0;
-      left: 0;
-      z-index: 10;
+      display: inline-block;
     }
     .rightBlock {
       display: inline;

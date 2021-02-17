@@ -1,10 +1,23 @@
 <template>
   <h1>Button 组件</h1>
+  <h2>示例一</h2>
   <hr />
-  <Button>我是按钮</Button>
-  <Button theme="button"> 我是按钮 </Button>
-  <Button theme="link"> 我是按钮 </Button>
-  <Button theme="text"> 我是按钮 </Button>
+  <Button theme="button"> 按钮 </Button>
+  <Button theme="link"> 按钮 </Button>
+  <Button theme="text"> 按钮 </Button>
+  <h2>示例二</h2>
+  <hr />
+  <Button size="small"> 按钮 </Button>
+  <Button> 按钮 </Button>
+  <Button size="big"> 按钮 </Button>
+  <br />
+  <Button theme="link" size="small"> 按钮 </Button>
+  <Button theme="link"> 按钮 </Button>
+  <Button theme="link" size="big"> 按钮 </Button>
+  <br />
+  <Button theme="text" size="small"> 按钮 </Button>
+  <Button theme="text"> 按钮 </Button>
+  <Button theme="text" size="big"> 按钮 </Button>
 </template>
 
 <script lang="ts">
