@@ -29,6 +29,10 @@
   <Button theme="button" loading> 加载中 </Button>
   <Button theme="link" loading> 加载中 </Button>
   <Button theme="text" loading> 加载中 </Button>
+  <br />
+  <Button theme="button"> 加载完毕 </Button>
+  <Button theme="link"> 加载完毕 </Button>
+  <Button theme="text"> 加载完毕 </Button>
 </template>
 
 <script lang="ts">
