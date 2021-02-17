@@ -1,5 +1,5 @@
 <template>
-  <button class="shidan-button" :class="classes">
+  <button class="shidan-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -15,6 +15,10 @@ export default {
     size: {
       type: String,
       default: "normal",
+    },
+    disable: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -72,6 +76,10 @@ $border-radius: 5px;
     font-size: 20px;
     height: auto;
     padding: 8px 16px;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    color: gray;
   }
 }
 </style>

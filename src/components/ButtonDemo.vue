@@ -18,6 +18,11 @@
   <Button theme="text" size="small"> 按钮 </Button>
   <Button theme="text"> 按钮 </Button>
   <Button theme="text" size="big"> 按钮 </Button>
+  <h2>示例三</h2>
+  <hr />
+  <Button theme="button" disabled> 按钮 </Button>
+  <Button theme="link" disabled> 按钮 </Button>
+  <Button theme="text" disabled> 按钮 </Button>
 </template>
 
 <script lang="ts">
