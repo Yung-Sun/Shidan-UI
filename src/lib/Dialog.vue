@@ -1,29 +1,39 @@
 <template>
-  <div class="shidan-dialog-overlay"></div>
-  <div class="shidan-dialog-wrapper">
-    <div class="shidan-dialog">
-      <header>
-        <span class="shidan-dialog-title">标题</span>
-        <span class="shidan-dialog-close"></span>
-      </header>
-      <hr />
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <hr />
-      <footer>
-        <Button class="shidan-dialog-ok">OK</Button>
-        <Button class="shidan-dialog-cancel">Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="shidan-dialog-overlay"></div>
+    <div class="shidan-dialog-wrapper">
+      <div class="shidan-dialog">
+        <header>
+          <span class="shidan-dialog-title">标题</span>
+          <span class="shidan-dialog-close"></span>
+        </header>
+        <hr />
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <hr />
+        <footer>
+          <Button class="shidan-dialog-ok">OK</Button>
+          <Button class="shidan-dialog-cancel">Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
+</template>
+  
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue";
 export default {
   components: { Button },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
