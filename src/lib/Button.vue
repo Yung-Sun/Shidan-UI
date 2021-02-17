@@ -1,10 +1,5 @@
 <template>
-  <button
-    class="shidan-button"
-    :class="classes"
-    :disabled="disabled"
-    :loading="loading"
-  >
+  <button class="shidan-button" :class="classes" :disabled="disabled">
     <loading
       theme="multi-color"
       size="16"
@@ -18,7 +13,7 @@
   </button>
 </template>
 
-<script>
+<script lang="ts">
 import { computed } from "vue";
 import { Loading } from "@icon-park/vue-next";
 export default {
