@@ -1,12 +1,28 @@
 <template>
-  <button class="shidan-button" :class="classes" :disabled="disabled">
+  <button
+    class="shidan-button"
+    :class="classes"
+    :disabled="disabled"
+    :loading="loading"
+  >
+    <loading
+      theme="multi-color"
+      size="16"
+      :fill="['#333', '#F5A623', '#FFF', '#ffffff']"
+      :strokeWidth="2"
+      class="shidan-loadingIndicator"
+      v-if="loading"
+    />
+
     <slot />
   </button>
 </template>
 
 <script>
 import { computed } from "vue";
+import { Loading } from "@icon-park/vue-next";
 export default {
+  components: { Loading },
   props: {
     theme: {
       type: String,
@@ -17,6 +33,10 @@ export default {
       default: "normal",
     },
     disable: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
       type: Boolean,
       default: false,
     },
@@ -80,6 +100,22 @@ $border-radius: 5px;
   &[disabled] {
     cursor: not-allowed;
     color: gray;
+    &.shidan-theme-link:hover {
+      color: gray;
+    }
+  }
+  > .shidan-loadingIndicator {
+    > svg {
+      animation: xxx 1.3s infinite linear;
+    }
+  }
+}
+@keyframes xxx {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

@@ -23,6 +23,12 @@
   <Button theme="button" disabled> 按钮 </Button>
   <Button theme="link" disabled> 按钮 </Button>
   <Button theme="text" disabled> 按钮 </Button>
+
+  <h2>示例四</h2>
+  <hr />
+  <Button theme="button" loading> 加载中 </Button>
+  <Button theme="link" loading> 加载中 </Button>
+  <Button theme="text" loading> 加载中 </Button>
 </template>
 
 <script lang="ts">
