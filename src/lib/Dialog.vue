@@ -1,11 +1,11 @@
 <template>
   <template v-if="visible">
-    <div class="shidan-dialog-overlay"></div>
+    <div class="shidan-dialog-overlay" @click="onClickOverlay"></div>
     <div class="shidan-dialog-wrapper">
       <div class="shidan-dialog">
         <header>
           <span class="shidan-dialog-title">标题</span>
-          <span class="shidan-dialog-close"></span>
+          <span class="shidan-dialog-close" @click="close"></span>
         </header>
         <hr />
         <main>
@@ -14,8 +14,8 @@
         </main>
         <hr />
         <footer>
-          <Button class="shidan-dialog-ok">OK</Button>
-          <Button class="shidan-dialog-cancel">Cancel</Button>
+          <Button class="shidan-dialog-ok" @click="ok">OK</Button>
+          <Button class="shidan-dialog-cancel" @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -33,6 +33,37 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnclickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnclickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit("cancel");
+      close();
+    };
+
+    return { close, onClickOverlay, ok, cancel };
   },
 };
 </script>

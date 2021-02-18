@@ -1,6 +1,11 @@
 <template>
   <h1>Dialog 组件</h1>
-  <Dialog :visible="x" />
+  <Dialog
+    v-model:visible="visible"
+    :closeOnclickOverlay="false"
+    :ok="f1"
+    :cancel="f2"
+  />
   <Button @click="toggle">Toggle</Button>
 </template>
 
@@ -11,11 +16,15 @@ import { ref } from "vue";
 export default {
   components: { Dialog, Button },
   setup() {
-    const x = ref(false);
+    const visible = ref(false);
     const toggle = () => {
-      x.value = !x.value;
+      visible.value = !visible.value;
     };
-    return { x, toggle };
+    const f1 = () => {
+      return false;
+    };
+    const f2 = () => {};
+    return { visible, toggle, f1, f2 };
   },
 };
 </script>
