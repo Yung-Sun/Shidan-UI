@@ -1,30 +1,32 @@
 <template>
   <template v-if="visible">
-    <div class="shidan-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="shidan-dialog-wrapper">
-      <div class="shidan-dialog">
-        <header>
-          <span class="shidan-dialog-title">标题</span>
-          <span class="shidan-dialog-close" @click="close"></span>
-        </header>
-        <hr />
-        <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
-        </main>
-        <hr />
-        <footer>
-          <Button class="shidan-dialog-ok" @click="ok">OK</Button>
-          <Button class="shidan-dialog-cancel" @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="shidan-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="shidan-dialog-wrapper">
+        <div class="shidan-dialog">
+          <header>
+            <span class="shidan-dialog-title">
+              <slot name="title" />
+            </span>
+            <span class="shidan-dialog-close" @click="close"></span>
+          </header>
+          <hr />
+          <main>
+            <slot name="content" />
+          </main>
+          <hr />
+          <footer>
+            <Button class="shidan-dialog-ok" @click="ok">OK</Button>
+            <Button class="shidan-dialog-cancel" @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
   
-</template>
 
-<script lang="ts">
+<script lang = "ts">
 import Button from "./Button.vue";
 export default {
   components: { Button },
@@ -59,7 +61,7 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit("cancel");
+      props.cancel?.(); // 这行相当于 props.cancel && props.cancel()
       close();
     };
 
