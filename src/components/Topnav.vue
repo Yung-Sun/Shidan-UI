@@ -37,7 +37,6 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   padding: 20px 10px;
-  width: 100%;
   position: fixed;
   background-color: transparent;
   display: block;
