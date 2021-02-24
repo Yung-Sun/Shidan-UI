@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref } from "vue";
+import { computed, onMounted, onUpdated, ref, watchEffect } from "vue";
 import Tab from "../lib/Tab.vue";
 
 export default {
@@ -53,6 +53,7 @@ export default {
     };
     onMounted(x);
     onUpdated(x);
+    // watchEffect(x);
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
