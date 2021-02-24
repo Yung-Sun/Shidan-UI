@@ -2,7 +2,7 @@
   <div class="banner">
     <egg
       theme="multi-color"
-      size="200"
+      size="230"
       :fill="['#333', '#F5A623', '#FFF', '#43CCF8']"
       :strokeWidth="2"
     />
@@ -10,7 +10,7 @@
     <h2>一 个 简 洁 美 观 的 UI 框 架</h2>
     <div class="action">
       <a href="https://github.com/Yung-Sun"> GitHub </a>
-      <a href="#/doc"> Start </a>
+      <a href="#/doc/introduce"> Start </a>
     </div>
   </div>
   <footer>
@@ -56,6 +56,9 @@ export default {
   justify-content: center;
   align-items: center;
   padding-top: 140px;
+  @media (max-width: 500px) {
+    padding-top: 20px;
+  }
   > h1 {
     font-weight: normal;
     font-size: 48px;
@@ -77,13 +80,14 @@ export default {
       line-height: 40px;
       width: 100px;
       text-decoration: none;
-      color: rgba(245, 166, 35, 0.5);
-      border: 2px solid rgba(51, 51, 51, 0.5);
+
+      color: rgba(245, 166, 35);
+      border: 2px solid rgba(51, 51, 51);
       border-radius: 10px;
     }
     > a:hover {
-      color: rgba(245, 166, 35);
-      border: 2px solid rgba(51, 51, 51);
+      color: rgba(245, 166, 35, 0.5);
+      border: 2px solid rgba(51, 51, 51, 0.5);
     }
   }
 }
