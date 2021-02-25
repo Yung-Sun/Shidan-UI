@@ -81,24 +81,31 @@ aside {
   color: #f5a623;
   background: #333;
   width: 150px;
-  padding: 16px;
+  padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
   height: 100%;
   > h2 {
-    margin-bottom: 4px;
+    padding: 6px 16px;
+    margin: 0;
   }
   > ol {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     > li {
-      padding: 6px 0;
       > a {
+        padding: 6px 16px;
+        display: block;
         text-decoration: none;
         color: inherit;
+        &.router-link-active {
+          background: white;
+          color: #333;
+        }
       }
     }
   }
