@@ -33,7 +33,6 @@ $h2: $h - 4px;
   border-radius: $h/2;
   position: relative;
   display: block;
-  margin-top: 20px;
   > span {
     position: absolute;
     top: 2px;
