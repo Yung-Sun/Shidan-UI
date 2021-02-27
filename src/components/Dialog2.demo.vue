@@ -1,4 +1,4 @@
-<demo>常规操作</demo>
+<demo>一键打开Dialog</demo>
 <template>
   <Button @click="showDialog">Show</Button>
 </template>

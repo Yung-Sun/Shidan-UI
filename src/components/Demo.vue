@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "prismjs/themes/prism.css";
+@import "prismjs/themes/prism-okaidia.css";
 </style>
 
 <style lang="scss" scoped>
