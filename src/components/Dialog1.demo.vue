@@ -31,7 +31,7 @@ export default {
     };
     const success = () => {
       // 此处可写用户点击ok按钮调用的函数
-      return false;
+      return true;
     };
     const fail = () => {
       // 此处可写用户点击cancel按钮调用的函数
