@@ -1,29 +1,42 @@
 <template>
-  <div>
-    <h1>Switch 组件</h1>
-    <hr />
-    <Demo :component="Switch1Demo" />
-    <Demo :component="Switch2Demo" />
+  <div class="demo">
+    <h2>{{ component.__sourceCodeTitle }}</h2>
+    <div class="demo-component">
+      <component :is="component" />
+    </div>
+    <div class="demo-actions">
+      <Button @click="codeVisible = !codeVisible">查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
+      <pre class="language-css" v-html="html" />
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import Demo from "./Demo.vue";
-import Switch from "../lib/Switch.vue";
-import Button from "../lib/Button.vue";
-import Switch1Demo from "./Switch1.demo.vue";
-import Switch2Demo from "./Switch2.demo.vue";
-import { ref } from "vue";
 
+
+<script lang="ts">
+import Button from "../lib/Button.vue";
 import "prismjs";
+import { computed, ref } from "vue";
 const Prism = (window as any).Prism;
 
 export default {
-  components: { Switch, Button, Demo },
-  setup() {
-    const bool = ref(false);
+  components: { Button },
+  props: {
+    component: Object,
+  },
+  setup(props) {
+    const html = computed(() => {
+      return Prism.highlight(
+        props.component.__sourceCode,
+        Prism.languages.html,
+        "html"
+      );
+    });
+    const codeVisible = ref(false);
 
-    return { bool, Switch1Demo, Switch2Demo, Prism };
+    return { Prism, html, codeVisible };
   },
 };
 </script>
@@ -42,6 +55,7 @@ $border-color: #d9d9d9;
     font-size: 20px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;
+    margin: 4px 0;
   }
   &-component {
     padding: 8px 16px;
@@ -60,4 +74,4 @@ $border-color: #d9d9d9;
     }
   }
 }
-</style>
+</style> 
