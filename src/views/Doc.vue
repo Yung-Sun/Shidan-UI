@@ -72,6 +72,7 @@ export default {
     flex-grow: 1;
     padding-left: 180px;
     margin-right: 16px;
+    min-width: 300px;
     @media (max-width: 500px) {
       padding: 0 16px;
     }
